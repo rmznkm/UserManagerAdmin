@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: userapi-deployment
+spec: 
+  replicas: 2
+  selector: 
+    matchLabels: 
+      app: userapi-pod
+  template: 
+    metadata: 
+      labels: 
+        app: userapi-pod
+    spec: 
+      containers: 
+      - name: userapi-container
+        image: rmzn/userapi-image:v1
+        resources:
+          limits:
+            cpu: 500m
+            memory: 750Mi
+        ports: 
+        - containerPort: 80
+        env: 
+        - name: EventBus__ServiceName
+          value: UserApi
+        - name: ENVIRONMENT
+          value: Development
+        - name: RabbitMq__HostName
+          value: my-rabbit-rabbitmq.default.svc.cluster.local
+        - name: RabbitMq__Port
+          value: "5672"
+        - name: RabbitMq__UserName
+          value: "admin"
+        - name: RabbitMq__Password
+          value: admin

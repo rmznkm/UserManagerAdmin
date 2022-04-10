@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A2372A55-9C16-4B8C-A743-74DAC0723108}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2EE2FF10-9972-44F0-9F50-6E546201CD6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus", "src\EventBus\EventBus.csproj", "{3F566C1A-BE37-4A34-8F92-BC7C398211D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAPI", "src\UserAPI\UserAPI.csproj", "{1CF52764-5FFC-40F2-B6F6-BB533E54C120}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cmd", "cmd", "{5089A9DB-BB23-44BC-80FB-43866B113B5F}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "cmd\docker-compose.dcproj", "{83236BB9-1C78-4D27-AD19-9AB1D4DA1629}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserManagerAdmin.TestHelper", "tests\UserManagerAdmin.TestHelper\UserManagerAdmin.TestHelper.csproj", "{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Tests", "tests\EventBus.Tests\EventBus.Tests.csproj", "{09F6FFA8-3533-4269-BFAF-2CFF2F773872}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAPI.Tests", "tests\UserAPI.Tests\UserAPI.Tests.csproj", "{ADDBEB21-1526-487E-84D0-50D0E327D9BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{F0048B48-E3A5-4956-9115-1537A6FD7740}"
+	ProjectSection(SolutionItems) = preProject
+		build\management-ingress.yml = build\management-ingress.yml
+		build\rabbitmq-ingress.yml = build\rabbitmq-ingress.yml
+		build\tls.crt = build\tls.crt
+		build\tls.key = build\tls.key
+		build\user-ingress.yml = build\user-ingress.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserAPI", "UserAPI", "{76EAAC55-7083-4AD4-AA8F-279852BBCD54}"
+	ProjectSection(SolutionItems) = preProject
+		build\UserAPI\deployment.yml = build\UserAPI\deployment.yml
+		build\UserAPI\service.yml = build\UserAPI\service.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ManagementAPI", "ManagementAPI", "{FE09B6F0-D0C0-48C6-9B0B-D385D1B9B19E}"
+	ProjectSection(SolutionItems) = preProject
+		build\ManagementAPI\deployment.yml = build\ManagementAPI\deployment.yml
+		build\ManagementAPI\service.yml = build\ManagementAPI\service.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagementAPI", "src\ManagementAPI\ManagementAPI.csproj", "{BBB99970-2188-483E-B707-6FC1C59E2168}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagmentAPI.Tests", "tests\ManagementAPI.Tests\ManagmentAPI.Tests.csproj", "{C4F7AD64-4321-49A7-8CBB-DD900E238BBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1AE101ED-D231-4B9A-9A4B-456561158B16}"
+	ProjectSection(SolutionItems) = preProject
+		docs\ApproveWaitingUser.PNG = docs\ApproveWaitingUser.PNG
+		docs\DockerCompose.md = docs\DockerCompose.md
+		docs\KubernetesSetup.md = docs\KubernetesSetup.md
+		ReadMe.md = ReadMe.md
+		docs\UserRegisterRequest.PNG = docs\UserRegisterRequest.PNG
+		docs\UserRegisterResponse.PNG = docs\UserRegisterResponse.PNG
+		docs\WaitingApprovalUserList.PNG = docs\WaitingApprovalUserList.PNG
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F566C1A-BE37-4A34-8F92-BC7C398211D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F566C1A-BE37-4A34-8F92-BC7C398211D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F566C1A-BE37-4A34-8F92-BC7C398211D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F566C1A-BE37-4A34-8F92-BC7C398211D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF52764-5FFC-40F2-B6F6-BB533E54C120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF52764-5FFC-40F2-B6F6-BB533E54C120}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF52764-5FFC-40F2-B6F6-BB533E54C120}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF52764-5FFC-40F2-B6F6-BB533E54C120}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83236BB9-1C78-4D27-AD19-9AB1D4DA1629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83236BB9-1C78-4D27-AD19-9AB1D4DA1629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83236BB9-1C78-4D27-AD19-9AB1D4DA1629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83236BB9-1C78-4D27-AD19-9AB1D4DA1629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09F6FFA8-3533-4269-BFAF-2CFF2F773872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09F6FFA8-3533-4269-BFAF-2CFF2F773872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09F6FFA8-3533-4269-BFAF-2CFF2F773872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09F6FFA8-3533-4269-BFAF-2CFF2F773872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADDBEB21-1526-487E-84D0-50D0E327D9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADDBEB21-1526-487E-84D0-50D0E327D9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADDBEB21-1526-487E-84D0-50D0E327D9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADDBEB21-1526-487E-84D0-50D0E327D9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB99970-2188-483E-B707-6FC1C59E2168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB99970-2188-483E-B707-6FC1C59E2168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB99970-2188-483E-B707-6FC1C59E2168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB99970-2188-483E-B707-6FC1C59E2168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4F7AD64-4321-49A7-8CBB-DD900E238BBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4F7AD64-4321-49A7-8CBB-DD900E238BBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4F7AD64-4321-49A7-8CBB-DD900E238BBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4F7AD64-4321-49A7-8CBB-DD900E238BBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3F566C1A-BE37-4A34-8F92-BC7C398211D2} = {A2372A55-9C16-4B8C-A743-74DAC0723108}
+		{1CF52764-5FFC-40F2-B6F6-BB533E54C120} = {A2372A55-9C16-4B8C-A743-74DAC0723108}
+		{83236BB9-1C78-4D27-AD19-9AB1D4DA1629} = {5089A9DB-BB23-44BC-80FB-43866B113B5F}
+		{6BC0BCBC-DADB-4DD4-9124-C2EE77EE40FB} = {2EE2FF10-9972-44F0-9F50-6E546201CD6B}
+		{09F6FFA8-3533-4269-BFAF-2CFF2F773872} = {2EE2FF10-9972-44F0-9F50-6E546201CD6B}
+		{ADDBEB21-1526-487E-84D0-50D0E327D9BA} = {2EE2FF10-9972-44F0-9F50-6E546201CD6B}
+		{76EAAC55-7083-4AD4-AA8F-279852BBCD54} = {F0048B48-E3A5-4956-9115-1537A6FD7740}
+		{FE09B6F0-D0C0-48C6-9B0B-D385D1B9B19E} = {F0048B48-E3A5-4956-9115-1537A6FD7740}
+		{BBB99970-2188-483E-B707-6FC1C59E2168} = {A2372A55-9C16-4B8C-A743-74DAC0723108}
+		{C4F7AD64-4321-49A7-8CBB-DD900E238BBE} = {2EE2FF10-9972-44F0-9F50-6E546201CD6B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FCBFCBB-632D-4820-B1FA-D619A6C648E0}
+	EndGlobalSection
+EndGlobal

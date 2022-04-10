@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: managementapi-deployment
+spec:
+  selector:
+    matchLabels:
+      app: managementapi-pod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: managementapi-pod
+    spec:
+      containers:
+      - name: management-container
+        image: rmzn/managementapi-image:v1
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 500m
+            memory: 750Mi
+        env:
+        - name: EventBus__ServiceName
+          value: ManagementApi
+        - name: ENVIRONMENT
+          value: Development
+        - name: RabbitMq__HostName
+          value: my-rabbit-rabbitmq.default.svc.cluster.local
+        - name: RabbitMq__Port
+          value: "5672"   
+        - name: RabbitMq__UserName
+          value: admin
+        - name: RabbitMq__Password
+          value: admin   
+        - name: Storage__ConnectionString
+          value: Server=my-postgresdeneme-postgresql.default.svc.cluster.local;Port=5432;Database=postgres;Username=postgres;Password=postgres;

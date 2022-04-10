@@ -1,0 +1,35 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "ManagementAPI";
+
+package userapproval;
+
+// The greeting service definition.
+service UserApproval {
+  // Sends a greeting
+  rpc GetApprovalWaitingUsers (ApprovalWaitingUserRequest) returns (ApprovalWaitingUsers);
+  rpc ApproveWaitingUser (ApproveRequest) returns (ApproveReply);
+}
+
+// The request message containing the user's name.
+message ApprovalWaitingUserRequest {
+}
+
+message ApprovalWaitingUser {
+  string requestId = 1;
+  string firstName = 2;
+  string lastName = 3;
+  google.protobuf.Timestamp updatedAt = 4;
+}
+
+message ApprovalWaitingUsers{
+  repeated ApprovalWaitingUser users = 1;
+}
+
+message ApproveReply {
+  string message = 1;
+}
+
+message ApproveRequest {
+  string requestId = 1;
+}

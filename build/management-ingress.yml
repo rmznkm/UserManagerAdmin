@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+   name: management-ingress
+   annotations:
+     nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
+     nginx.ingress.kubernetes.io/grpc-backend: "true"
+spec: 
+   ingressClassName: nginx
+   tls:
+    - hosts:
+      - management.myexample.com
+      secretName: my-grpc-secret
+   rules:
+   - host: management.myexample.com
+     http:
+       paths:
+       - path: /
+         pathType: Prefix
+         backend:
+           service:
+             name: managementapi-service
+             port:
+               number: 80

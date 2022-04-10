@@ -1,0 +1,46 @@
+version: '3.4'
+
+services:
+  rabbit1:
+    image: rabbitmq:3-management-alpine
+    hostname: rabbit1
+    ports:
+        - 5672:5672
+        - 15672:15672
+    environment:
+        - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER:-admin}
+        - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS:-admin}
+
+  postgres:
+    image: postgres:14.1-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes: 
+      - postgres:/var/lib/postgresql/data
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/create_tables.sql
+
+  managementapi:
+    image: ${DOCKER_REGISTRY-}managementapi
+    container_name: managementapi
+    build:
+      context: ..\src\ManagementAPI
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+
+  userapi:
+    image: ${DOCKER_REGISTRY-}userapi
+    container_name: userapi
+    build:
+      context: ..\src\UserAPI
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+
+volumes:
+  postgres:
+    driver: local
