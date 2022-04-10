@@ -1,9 +1,9 @@
-${SolutionPath} => Projenin bulunduğu path
-helm kurulumu öncesinde yapılması gerekenler
+${SolutionPath} => Projenin bulunduÄŸu path
+helm kurulumu Ã¶ncesinde yapÄ±lmasÄ± gerekenler
 	helm repo add bitnami https://charts.bitnami.com/bitnami
 	helm repo add nginx-stable https://helm.nginx.com/stable
 
-1-) Projenin bulunduğu pathe gidilip imagelar image repository ye atılır.
+1-) Projenin bulunduÄŸu pathe gidilip imagelar image repository ye atÄ±lÄ±r.
 	cd  ${SolutionPath}
 	docker build -t rmzn/userapi-image:v1 --file src/UserAPI/Dockerfile .
 	docker build -t rmzn/managementapi-image:v1 --file src/ManagementAPI/Dockerfile .
@@ -11,10 +11,10 @@ helm kurulumu öncesinde yapılması gerekenler
 2-) RabbitMQ kurulumu
 	a-) Kurulum
 		helm install my-rabbit --set auth.username=admin,auth.password=admin,auth.erlangCookie=secretcookie bitnami/rabbitmq
-		//nginx controller kullanılmıcaksa opsiyonel
+		//nginx controller kullanÄ±lmÄ±caksa opsiyonel
 		kubectl port-forward --namespace default svc/my-rabbit-rabbitmq 15672:15672
 		kubectl port-forward --namespace default svc/my-rabbit-rabbitmq 5672:5672
-	b-) Kaldırma
+	b-) KaldÄ±rma
 		helm delete my-rabbit
 
 3-) Postgres kurulumu
@@ -28,7 +28,7 @@ helm kurulumu öncesinde yapılması gerekenler
 		// opsiyonel gerek yok
 		kubectl port-forward --namespace default svc/my-postgresdeneme-postgresql 5432:5432
 
-	b-) Kaldırma
+	b-) KaldÄ±rma
 		helm delete my-postgresdeneme
 
 4-) UserApi nin deploment ve service uygulama
@@ -51,19 +51,19 @@ helm kurulumu öncesinde yapılması gerekenler
 	kubectl apply -f user-ingress.yml
 	kubectl apply -f management-ingress.yml
 
-	Bu işlemden sonra subdomain ingress kullanldığı için etc/host dosyasına eklenmesi gereken
-	 kubectl get service app-ingress-ingress-nginx-controller bu komutta gelen EXTERNAL-IP alınıp
+	Bu iÅŸlemden sonra subdomain ingress kullanldÄ±ÄŸÄ± iÃ§in etc/host dosyasÄ±na eklenmesi gereken
+	 kubectl get service app-ingress-ingress-nginx-controller bu komutta gelen EXTERNAL-IP alÄ±nÄ±p
 		{EXTERNAL-IP} user.myexample.com
 		{EXTERNAL-IP} management.myexample.com
 		{EXTERNAL-IP} rabbitmq.myexample.com 
 
-		Örn:
+		Ã–rn:
 		127.0.0.1 user.myexample.com
 		127.0.0.1 management.myexample.com
 		127.0.0.1 rabbitmq.myexample.com 
 
-8-) Not olarak ManagementAPI GRPC çalıştığı için management-ingress.yml daki certifika kubernetes tarafından validate edilebilir.
-	Bunu aşmak için geçici seçenek olarak aşağıdaki komut ile 7000 portundan çalışması sağlanabilir.
+8-) Not olarak ManagementAPI GRPC Ã§alÄ±ÅŸtÄ±ÄŸÄ± iÃ§in management-ingress.yml daki certifika kubernetes tarafÄ±ndan validate edilebilir.
+	Bunu aÅŸmak iÃ§in geÃ§ici seÃ§enek olarak aÅŸaÄŸÄ±daki komut ile 7000 portundan Ã§alÄ±ÅŸmasÄ± saÄŸlanabilir.
 	kubectl port-forward --namespace default svc/managementapi-service 7000:80
 
 9-) Uygulama pathleri

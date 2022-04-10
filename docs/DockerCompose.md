@@ -1,4 +1,4 @@
-Proje açýldýðýnda cmd/DockerCompose projesi baþlangýç projesi yapýldýðýnda run edilebilir.
+Proje aÃ§Ä±ldÄ±ÄŸÄ±nda cmd/DockerCompose projesi baÅŸlangÄ±Ã§ projesi yapÄ±ldÄ±ÄŸÄ±nda run edilebilir.
 
 -UserApi http-path http://localhost:6010/swagger/index.json
 	

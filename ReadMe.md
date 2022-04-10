@@ -1,6 +1,6 @@
-Proje DockerCompose ve Kubernetes olarak çalıştırılabilir.
-docs klasörü altında her iki durum için anlatım yapılmıştır.
+Proje DockerCompose ve Kubernetes olarak Ã§alÄ±ÅŸtÄ±tÄ±rÄ±labilir.
+docs klasÃ¶rÃ¼ altÄ±nda her iki durum iÃ§in anlatÄ±m yapÄ±lmÄ±ÅŸtÄ±r.
 
-UserRegistery işlemi docs/UserRegisterRequest.PNG ve docs/UserRegisterResponse.PNG de örneklendirilmiştir.
+UserRegistery iÅŸlemi docs/UserRegisterRequest.PNG ve docs/UserRegisterResponse.PNG de Ã¶rneklendirilmiÅŸtir.
 Onay listeleme docs/WaitingApprovalUserList.PNG
 Onaylama docs/ApproveWaitingUser.PNG
